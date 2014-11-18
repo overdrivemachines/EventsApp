@@ -1,0 +1,26 @@
+User Model
+===========
+username
+email
+password
+
+
+Event Model
+===========
+Title
+Description
+Date
+StartTime
+EndTime
+Address1
+Address2
+Zip
+url
+email
+phone
+user_id
+
+Photo Model
+=============
+url
+event_id
