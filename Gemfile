@@ -40,3 +40,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 gem 'devise'
+
+# Did’t install Node.js
+gem 'therubyracer'
