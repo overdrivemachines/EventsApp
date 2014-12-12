@@ -1,3 +1,25 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id          :integer          not null, primary key
+#  title       :string(255)
+#  fromDate    :date
+#  fromTime    :time
+#  untilTime   :time
+#  untilDate   :date
+#  address1    :string(255)
+#  address2    :string(255)
+#  zip         :string(255)
+#  description :text
+#  url         :string(255)
+#  email       :string(255)
+#  phone       :string(255)
+#  user_id     :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Event < ActiveRecord::Base
 	belongs_to :user
 	has_many :photos
@@ -26,23 +48,3 @@ class Event < ActiveRecord::Base
 		end
 	end
 end
-
-=begin
-
-t.string   "title"
-t.date     "fromDate"
-t.time     "fromTime"
-t.time     "untilTime"
-t.date     "untilDate"
-t.string   "address1"
-t.string   "address2"
-t.string   "zip"
-t.string   "description"
-t.string   "url"
-t.string   "email"
-t.string   "phone"
-t.integer  "user_id"
-t.datetime "created_at"
-t.datetime "updated_at"
-
-=end

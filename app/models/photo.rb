@@ -1,12 +1,14 @@
+# == Schema Information
+#
+# Table name: photos
+#
+#  id         :integer          not null, primary key
+#  url        :string(255)
+#  event_id   :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Photo < ActiveRecord::Base
   belongs_to :event
 end
-
-=begin
-
-t.string   "url"
-t.integer  "event_id"
-t.datetime "created_at"
-t.datetime "updated_at"
-	
-=end

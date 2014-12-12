@@ -43,3 +43,7 @@ gem 'devise'
 
 # Did’t install Node.js
 gem 'therubyracer'
+
+# Add a comment summarizing the current schema to the top
+# https://github.com/ctran/annotate_models
+gem 'annotate'

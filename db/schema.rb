@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20141212000112) do
     t.string   "address1"
     t.string   "address2"
     t.string   "zip"
-    t.text     "description", limit: 255
+    t.text     "description"
     t.string   "url"
     t.string   "email"
     t.string   "phone"
