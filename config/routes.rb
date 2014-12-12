@@ -62,3 +62,41 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
+
+# == Route Map
+#
+#                   Prefix Verb   URI Pattern                    Controller#Action
+#                   photos GET    /photos(.:format)              photos#index
+#                          POST   /photos(.:format)              photos#create
+#                new_photo GET    /photos/new(.:format)          photos#new
+#               edit_photo GET    /photos/:id/edit(.:format)     photos#edit
+#                    photo GET    /photos/:id(.:format)          photos#show
+#                          PATCH  /photos/:id(.:format)          photos#update
+#                          PUT    /photos/:id(.:format)          photos#update
+#                          DELETE /photos/:id(.:format)          photos#destroy
+#                   events GET    /events(.:format)              events#index
+#                          POST   /events(.:format)              events#create
+#                new_event GET    /events/new(.:format)          events#new
+#               edit_event GET    /events/:id/edit(.:format)     events#edit
+#                    event GET    /events/:id(.:format)          events#show
+#                          PATCH  /events/:id(.:format)          events#update
+#                          PUT    /events/:id(.:format)          events#update
+#                          DELETE /events/:id(.:format)          events#destroy
+#         new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+#             user_session POST   /users/sign_in(.:format)       devise/sessions#create
+#     destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+#            user_password POST   /users/password(.:format)      devise/passwords#create
+#        new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+#       edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+#                          PATCH  /users/password(.:format)      devise/passwords#update
+#                          PUT    /users/password(.:format)      devise/passwords#update
+# cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+#        user_registration POST   /users(.:format)               devise/registrations#create
+#    new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+#   edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+#                          PATCH  /users(.:format)               devise/registrations#update
+#                          PUT    /users(.:format)               devise/registrations#update
+#                          DELETE /users(.:format)               devise/registrations#destroy
+#               home_index GET    /home/index(.:format)          home#index
+#                     root GET    /                              home#index
+#
