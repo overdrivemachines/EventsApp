@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118233842) do
+ActiveRecord::Schema.define(version: 20141212000112) do
 
   create_table "events", force: true do |t|
     t.string   "title"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20141118233842) do
     t.string   "address1"
     t.string   "address2"
     t.string   "zip"
-    t.string   "description"
+    t.text     "description", limit: 255
     t.string   "url"
     t.string   "email"
     t.string   "phone"
