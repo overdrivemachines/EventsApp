@@ -13,3 +13,219 @@
  *= require_tree .
  *= require_self
  */
+ @import url(http://fonts.googleapis.com/css?family=Raleway:400,800);
+ @import url(http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css);
+ @import url(//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css);
+ html {
+   box-sizing: border-box;
+ }
+ *, *:before, *:after {
+   box-sizing: inherit;
+   transition: all 0.15s ease-in-out;
+ }
+
+ body {
+     background: #2f3238;
+     font-family: 'Raleway', sans-serif;
+     font-size: 16px;
+     color: white;
+     height: 100%;
+ }
+
+ a {
+   text-decoration: none;
+   color: #3498db;
+ }
+
+ /*HEADER////////////////////////////////////////////*/
+
+ #site-header {
+   margin: 4em 1em;
+   text-align: center;
+ }
+
+ #site-header h1 {
+   font-size: 4em;
+   font-weight: 800;
+   line-height: 1.3;
+ }
+
+ #site-header h1 span {
+   display: block;
+   font-size: 0.45em;
+   font-weight: 400;
+   color: #74777b;
+   padding-bottom: 0.6em;
+ }
+
+ /*EVENTS-NAVIGATION///////////////////////////////*/
+ #events-nav {
+   padding-top: 2em;
+ }
+ #events-nav a {
+   margin: 0 5px;
+   padding: 1em 1.5em;
+   text-transform: uppercase;
+   font-weight: bold;
+ }
+ #events-nav a.current, #events-nav a:hover {
+   background: #3c414a;
+   color: #fff;
+ }
+
+ /*MAIN////////////////////////////////////////////*/
+ #main {
+   margin-top: 50px;
+ }
+ #main section {
+   display: none;
+ }
+ #main section.active {
+   display: block;
+ }
+
+ /*SECTION/////////////////////////////////////////*/
+ .content-wrap {
+   max-width: 800px;
+   border-style: dotted;
+   border-top-width: 5px;
+   margin: auto;
+   padding: 1em;
+   line-height: 1.66;
+ }
+ .content-wrap:last-child {
+   border-bottom-width: 5px;
+ }
+ .content {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+ }
+ .content > * {
+   
+ }
+ .date-wrap {
+   padding: 1.5em 1.5em 0.25em 1.5em;
+   text-align: center;
+   
+   min-width: 150px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   color: #74777b;
+   background: #3c414a;
+ }
+ .date-wrap date {
+   font-size: 1.4em;
+   font-weight: 800;
+   line-height: 2.5;
+
+ }
+ .events-wrap {
+   padding: 0 1em 0 1.5em;
+   color: #74777b;
+   font-weight: 800;
+   /* font-size: 1.5em; */
+   
+ }
+ .events-wrap ul li {
+   /* padding-top: 0.3em; */
+   padding-top: 0.5em;
+   padding-bottom: 0.5em;
+   /* border-bottom: 0.1em solid #74777b; */
+   border-bottom: 0.1em solid rgba(116,119,123, 0.3);
+   
+   line-height: 1.667;
+   position: relative;
+ }
+ .events-wrap ul li:last-child {
+   border-bottom: none;
+ }
+ .arrow {
+   position: absolute;
+   transform: translate(-6px, -7px);
+   margin-top: 16px;
+   right: 20px;
+ }
+ .arrow:before, .arrow:after {
+   content: "";
+   position: absolute;
+   background-color: #3498db;
+   width: 3px;
+   height: 9px;
+ }
+ .arrow:before {
+   transform: translate(-2px, 0) rotate(45deg);
+ }
+ .arrow:after {
+   transform: translate(2px, 0) rotate(-45deg);
+ }
+ ul li input[type=checkbox] {
+   position: absolute;
+   cursor: pointer;
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+   opacity: 0;
+ }
+ ul li input[type=checkbox]:checked ~ h2 {
+   font-style: italic;
+ }
+ ul li input[type=checkbox] ~ h2 {
+   font-style: normal;
+ }
+ ul li input[type=checkbox]:checked ~ p {
+   padding-top: 0;
+   padding-bottom: 0;
+   margin-top: 0;
+   max-height: 0;
+   opacity: 0;
+   /* transform: translate(0, 50%); */
+ }
+ ul li input[type=checkbox]:checked ~ .arrow:before {
+   transform: translate(2px, 0) rotate(45deg);
+ }
+ ul li input[type=checkbox]:checked ~ .arrow:after {
+   transform: translate(-2px, 0) rotate(-45deg);
+ }
+ .events-wrap ul li h2 {
+   font-style: italic;
+   text-transform: uppercase;
+   color: #3498db;
+   padding-right: 40px;
+ }
+ .events-wrap ul li p {
+   overflow: hidden;
+   z-index: 2;
+   position: relative;
+   padding: 20px;
+   font-weight: 400;
+ }
+ .events-wrap ul li p + p {  
+   padding-top: 0;
+ }
+ .events-wrap ul li p strong {
+   font-weight: 800;
+ }
+ .time, .location {
+   font-size: 1.662em;
+ }
+ .events-wrap ul li p.time {
+   padding-top: 0;
+   padding-bottom: 0;
+ }
+ .time span, .location span {
+   padding: 0 20px;
+   position: relative;
+   top: 0.1em;
+ }
+
+ /*ANIMATION////////////////////////////////////////////*/
+ p, .arrow:before, .arrow:after {
+   
+ }
+
+ footer {
+   padding: 100px;
+   text-align: center;
+ }
