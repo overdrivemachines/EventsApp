@@ -18,5 +18,7 @@ Graphviz (only for Development Environment)
 
 Database Creation
 -----------------
-`rake db:migrate`
-`rake db:seed`
+```
+rake db:migrate
+rake db:seed
+```
