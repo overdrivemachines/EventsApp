@@ -21,3 +21,7 @@ Database Creation
 $ rake db:migrate
 $ rake db:seed
 ```
+
+License
+-------
+Copyright (C) 2014-2015 Dipen Chauhan get.dipen@gmail.com
