@@ -15,3 +15,8 @@ rails 4.1.8
 System Dependencies
 -------------------
 Graphviz (only for Development Environment)
+
+Database Creation
+-----------------
+`rake db:migrate`
+`rake db:seed`
