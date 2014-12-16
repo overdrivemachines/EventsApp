@@ -8,6 +8,10 @@
 #  created_at :datetime
 #  updated_at :datetime
 #
+# Indexes
+#
+#  index_photos_on_event_id  (event_id)
+#
 
 class Photo < ActiveRecord::Base
   belongs_to :event

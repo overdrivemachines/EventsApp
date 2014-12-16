@@ -19,6 +19,10 @@
 #  created_at  :datetime
 #  updated_at  :datetime
 #
+# Indexes
+#
+#  index_events_on_user_id  (user_id)
+#
 
 class Event < ActiveRecord::Base
 	belongs_to :user
