@@ -17,18 +17,26 @@
 				<div class="events-wrap">
 					<ul>
 						<% @events.each do |event| %>
-							<li>
+							<li class="event">
 								<input type="checkbox" checked>
 								<i class="arrow"></i>
 								<h2><%= event.title %></h2>
-								<p><%= event.description %></p>
-								<p class="time">
+								<p class="first"><%= event.description %></p>
+								<p class="details">
 									<span><i class="fa fa-clock-o fa-fw"></i></span>              
 									<%= event.fromTime.strftime("%I:%M%p") %> - <%= event.untilTime.strftime("%I:%M%p") %>
 								</p>
-								<p class="location">
+								<p class="details">
 									<span><i class="fa fa-map-marker fa-fw"></i></span>
 									<%= event.address1 %>
+								</p>
+								<p class="details">
+									<span><i class="fa fa-envelope fa-fw"></i></span>
+									<%= event.email %>
+								</p>
+								<p class="details">
+									<span><i class="fa fa-phone fa-fw"></i></span>
+									<%= event.phone %>
 								</p>
 							</li>
 						<% end %>
