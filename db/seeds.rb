@@ -27,8 +27,8 @@ me.save!
 # To save time: Time.new(year, month, day, hour, min) 
 # 	Eg: Time.new(d.year, d.mon, d.day, 4, 10)
 
-d = Date.new(2014, 12, 15)
-t = Time.new(2014, 12, 15, 14, 00)
+d = Date.new(2014, 12, 17)
+t = Time.new(2014, 12, 17, 14, 00)
 e = Event.new(
 	title: 'Former art faculty exhibit',
 	fromDate: d,
@@ -45,8 +45,8 @@ e = Event.new(
 )
 e.save!
 
-d = Date.new(2014, 12, 15)
-t = Time.new(2014, 12, 15, 11, 00)
+d = Date.new(2014, 12, 17)
+t = Time.new(2014, 12, 17, 11, 00)
 Event.create(
 	{
 		title: 'California Guitar Trio & Montreal Guitar Trio are coming to CSU, Chico!',
