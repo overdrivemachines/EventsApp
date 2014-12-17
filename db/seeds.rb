@@ -29,22 +29,21 @@ me.save!
 
 d = Date.new(2014, 12, 15)
 t = Time.new(2014, 12, 15, 14, 00)
-Event.create(
-	{
-		title: 'Former art faculty exhibit',
-		fromDate: d,
-		fromTime: t,
-		untilTime: t + 3600,
-		untilDate: d,
-		address1: 'BMU Auditorium',
-		address2: '',
-		zip: '95926',
-		description: 'The public is invited to the <strong>College of Behavioral & Social Sciences Faculty Colloquium</strong> to be held in the BMU Auditorium on Tuesday, November 18th from 5:30 – 7:30 pm. Dr. Ryan Patten, Department of Political Science, will deliver the keynote address.',
-		url: '',
-		email: '',
-		phone: '5305880014'
-	}	
+e = Event.new(
+	title: 'Former art faculty exhibit',
+	fromDate: d,
+	fromTime: t,
+	untilTime: t + 3600,
+	untilDate: d,
+	address1: 'BMU Auditorium',
+	address2: '',
+	zip: '95926',
+	description: 'The public is invited to the <strong>College of Behavioral & Social Sciences Faculty Colloquium</strong> to be held in the BMU Auditorium on Tuesday, November 18th from 5:30 – 7:30 pm. Dr. Ryan Patten, Department of Political Science, will deliver the keynote address.',
+	url: '',
+	email: '',
+	phone: '5305880014'
 )
+e.save!
 
 d = Date.new(2014, 12, 15)
 t = Time.new(2014, 12, 15, 11, 00)
