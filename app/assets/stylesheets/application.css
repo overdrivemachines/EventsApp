@@ -209,7 +209,8 @@
    font-weight: 800;
  }
  .time, .location {
-   font-size: 1.662em;
+   /*font-size: 1.662em;*/
+   font-size: 1.2em;
  }
  .events-wrap ul li p.time {
    padding-top: 0;
