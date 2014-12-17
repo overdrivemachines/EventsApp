@@ -43,7 +43,7 @@ Event.create(
 		url: '',
 		email: '',
 		phone: '5305880014'
-	}
+	}	
 )
 
 d = Date.new(2014, 12, 15)
