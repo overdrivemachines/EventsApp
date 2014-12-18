@@ -27,8 +27,8 @@ me.save!
 # To save time: Time.new(year, month, day, hour, min) 
 # 	Eg: Time.new(d.year, d.mon, d.day, 4, 10)
 
-d = Date.new(2014, 12, 17)
-t = Time.new(2014, 12, 17, 14, 00)
+d = Date.new(2014, 12, 22)
+t = Time.new(2014, 12, 22, 14, 00)
 e = Event.new(
 	title: 'Former art faculty exhibit',
 	fromDate: d,
@@ -45,9 +45,7 @@ e = Event.new(
 )
 e.save!
 
-d = Date.new(2014, 12, 17)
-t = Time.new(2014, 12, 17, 11, 00)
-Event.create(
+Event.create([
 	{
 		title: 'California Guitar Trio & Montreal Guitar Trio are coming to CSU, Chico!',
 		fromDate: d,
@@ -62,7 +60,106 @@ Event.create(
 		email: '',
 		phone: '5305880014'
 	}
-)
+])
+
+d = Date.new(2014, 12, 29)
+t = Time.new(2014, 12, 29, 11, 00)
+Event.create([
+	{
+		title: 'California Guitar Trio & Montreal Guitar Trio are coming to CSU, Chico!',
+		fromDate: d,
+		fromTime: t,
+		untilTime: t + 7200,
+		untilDate: d,
+		address1: 'BMU Auditorium',
+		address2: '',
+		zip: '95926',
+		description: 'Dr. Patten is an active scholar; in addition to his recent book, he published six peer-reviewed journal articles in 2013 and 2014. Dr. Patten has a strong record of active publication in numerous peer-reviewed journals and has given presentations to criminology societies nationally and internationally, most recently in Budapest, Hungary.',
+		url: '',
+		email: '',
+		phone: '5305880014'
+	},
+	{
+		title: 'Will Your Department Be Closed December 29th through January 2nd?',
+		fromDate: d,
+		fromTime: t,
+		untilTime: t + 7200,
+		untilDate: d,
+		address1: 'BMU Auditorium',
+		address2: '',
+		zip: '95926',
+		description: 'The Departments of Shipping & Receiving and Printing & Mail Services would like to request email notification of department closures for the period of December 29th through January 2nd .
+ 
+Please email Cody Johns (cmjohns@csuchico.edu) with your department’s expected closure dates. All packages, mail, and print deliveries will be held until your return.
+ 
+If you have any questions or concerns you may call Mail Services at campus Extension 5326.',
+		url: 'http://www.csuchico.edu/prnt/mail_services/index.shtml',
+		email: 'cmjohns@csuchico.edu',
+		phone: '5305880014'
+	}
+])
+
+e = Event.new
+e.title = 'CSU, Chico Employees in Need of Donated Leave Credits'
+e.fromDate = d
+e.fromTime = t
+e.untilTime = t + 3600
+e.untilDate = d
+e.address1 = 'Human Resources Service Center (Kendall 220)'
+e.address2 = ''
+e.zip = '95926'
+e.description = 'The following employees are in need of donated leave credits:
+ 
+ERIC CASEY (Staff, Facilities Management and Services)
+DONNA KILLIINGSWORTH* (Staff, Humanities and Fine Arts)
+MARIO MENA (Staff, Housing and Food Services)
+MARSHA OSBORNE* (Staff, Graduate Studies)
+GLENN SIMMONS (Staff, Facilities Management and Services)
+BRIAN TIVEL (Staff, Facilities Management and Services)
+KELLI TRNKA (Staff, Information Technology Support Services)
+ 
+*Only vacation credits may be donated for purpose of family care leave.
+ 
+If you wish to donate leave credits, you will need to sign the a donation form - which is available at the Human Resources Service Center (Kendall 220).   BECAUSE YOUR SIGNATURE IS REQUIRED, YOUR DONATIONS CANNOT BE ACCEPTED OVER THE PHONE OR VIA E-MAIL.'
+e.url = ''
+e.email = ''
+e.phone = '5305880014'
+e.save!
+
+d = Date.new(2015, 1, 7)
+t = Time.new(2014, 1, 7, 11, 00)
+Event.create([
+	{
+		title: 'California Guitar Trio & Montreal Guitar Trio are coming to CSU, Chico!Identity Finder Reminder',
+		fromDate: d,
+		fromTime: t,
+		untilTime: t + 7200,
+		untilDate: d,
+		address1: 'BMU Auditorium',
+		address2: '',
+		zip: '95926',
+		description: 'Dr. Patten is an active scholar; in addition to his recent book, he published six peer-reviewed journal articles in 2013 and 2014. Dr. Patten has a strong record of active publication in numerous peer-reviewed journals and has given presentations to criminology societies nationally and internationally, most recently in Budapest, Hungary.',
+		url: '',
+		email: '',
+		phone: '5305880014'
+	},
+	{
+		title: 'Identity Finder Reminder',
+		fromDate: d,
+		fromTime: t,
+		untilTime: t + 7200,
+		untilDate: d,
+		address1: 'BMU Auditorium',
+		address2: '',
+		zip: '95926',
+		description: 'Identity theft is often big news and can be very costly. Identity Finder is an important tool that helps you protect yourself and our students, faculty, and staff from identity theft. Identity Finder scans your computer for protected data (such as Social Security Numbers, driver’s license numbers, credit card and bank account numbers) and allows you to securely remove it.
+ 
+Identity Finder will be automatically installed on campus computers on January 7th, but you can reduce the risk of identity theft early by downloading and running it now.',
+		url: 'http://www.csuchico.edu/identityfinder',
+		email: '',
+		phone: '5305880014'
+	}
+])
 
 # Event.create([
 # 	{
@@ -80,3 +177,4 @@ Event.create(
 # 		phone: 
 # 	}
 # ])
+
