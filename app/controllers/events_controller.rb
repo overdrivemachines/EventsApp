@@ -8,6 +8,8 @@ class EventsController < ApplicationController
 		@events = Event.all
 		@events_at_date = Hash.new
 
+
+
 		for i in 0..(@events.count - 1) do
 			@events_at_date[@events[i].fromDate] = Array.new
 			@events_at_date[@events[i].fromDate] << @events[i]

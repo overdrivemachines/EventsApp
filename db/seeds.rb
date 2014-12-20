@@ -161,6 +161,43 @@ Identity Finder will be automatically installed on campus computers on January 7
 	}
 ])
 
+
+d = Date.new(2015, 1, 4)
+t = Time.new(2015, 1, 4, 12, 00)
+e = Event.new
+e.title = 'Student Seeking Recovery--Last Meeting of Semester!!!'
+e.fromDate = d
+e.fromTime = t
+e.untilTime = t + 3600
+e.untilDate = d
+e.address1 = 'Student Services Center, Room 490'
+e.address2 = ''
+e.zip = '95926'
+e.description = 'The Campus Alcohol and Drug Education Center is happy to announce a new, weekly, confidential student support group which will explore a variety of topics related to substance misuse and recovery options. This is an Open, Confidential, facilitated group for any student seeking a safe, non-judgmental forum in which to explore issues related to their substance use or the substance use of a loved one. No commitment is necessary. This is NOT a 12-step format group.'
+e.url = ''
+e.email = 'cadec@csuchico.edu'
+e.phone = '5308986450'
+e.save!
+
+d = Date.new(2015, 1, 5)
+t = Time.new(2015, 1, 5, 19, 00)
+e = Event.new
+e.title = 'Alcoholics Anonymous Meeting--Near Campus'
+e.fromDate = d
+e.fromTime = t
+e.untilTime = t + 3600
+e.untilDate = d
+e.address1 = 'Bidwell Presbyterian Church Room 209'
+e.address2 = ''
+e.zip = '95926'
+e.description = '\"Clean Slate\" --- Alcoholics Anonymous Meetings near Campus - 12–Step Format.
+ 
+Every Monday at 7:00PM right next door to campus at Bidwell Presbyterian Church, upstairs Room 209. Open Meeting. All are welcome.'
+e.url = ''
+e.email = ''
+e.phone = '5308986450'
+e.save!
+
 # Event.create([
 # 	{
 # 		title: 'Former art faculty exhibit',
