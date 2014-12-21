@@ -5,28 +5,27 @@ class EventsController < ApplicationController
 	respond_to :html
 
 	def index
-		@events = Event.all
+		@events = Event.order(:fromDate)
 		@events_at_date = Hash.new
 
-
-
 		for i in 0..(@events.count - 1) do
-			@events_at_date[@events[i].fromDate] = Array.new
-			@events_at_date[@events[i].fromDate] << @events[i]
-			logger.info "This is date: #{@events[i].fromDate}"
-			for j in (i + 1)..(@events.count - 1) do
-				if j <= (@events.count - 1)
-					if @events[j].fromDate == @events[i].fromDate
-						@events_at_date[@events[i].fromDate] << @events[j]
-					end
-				end				
+			if @events_at_date[@events[i].fromDate] == nil
+				@events_at_date[@events[i].fromDate] = Array.new
+				j = 0
 			end
+			@events_at_date[@events[i].fromDate][j] = @events[i]
+			j = j + 1 
+			logger.info "This is date: #{@events[i].fromDate}"
 		end
 
-		@events.each_with_index { |e, i|
-			@events_at_date[e.fromDate] = Array.new
-			@events_at_date[e.fromDate].push(e)
-		}
+		@events_at_date.each do |date, events|
+			logger.info "date: #{date} # of events: #{events.count} "
+		end
+
+		# @events.each_with_index { |e, i|
+		# 	@events_at_date[e.fromDate] = Array.new
+		# 	@events_at_date[e.fromDate].push(e)
+		# }
 		respond_with(@events)
 	end
 
