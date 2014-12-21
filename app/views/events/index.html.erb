@@ -8,46 +8,49 @@
 
 <article id="main">
 	<section class="animated fadeInLeft active">
-		<div class="content-wrap">
-			<div class="content">
-				<div class="date-wrap">
-					<div><i class="fa fa-calendar fa-4x"></i></div>
-					<date>NOV 17</date>
-				</div>
-				<div class="events-wrap">
-					<ul>
-						<% @events.each do |event| %>
-							<li class="event">
-								<input type="checkbox" checked>
-								<i class="arrow"></i>
-								<h2><%= event.title %></h2>
-								<p class="first"><%= event.description %></p>
-								<p class="details">
-									<span><i class="fa fa-clock-o fa-fw"></i></span>              
-									<%= event.fromTime.strftime("%I:%M%p") %> - <%= event.untilTime.strftime("%I:%M%p") %>
-								</p>
-								<p class="details">
-									<span><i class="fa fa-map-marker fa-fw"></i></span>
-									<%= event.address1 %>
-								</p>
-								<p class="details">
-									<span><i class="fa fa-phone fa-fw"></i></span>
-									<%= event.phone %>
-								</p>
-								<p class="details">
-									<span><i class="fa fa-envelope fa-fw"></i></span>
-									<%= event.email %>
-								</p>
-								<p class="details">
-									<span><i class="fa fa-globe fa-fw"></i></span>
-									<%= event.url %>
-								</p>
-							</li>
-						<% end %>
-					</ul>  
-				</div> <!-- .events-wrap -->
-			</div> <!-- .content -->
-		</div> <!-- .content-wrap -->
+		<% @events_at_date.each do |date, events| %>
+			<div class="content-wrap">
+				<div class="content">
+					<div class="date-wrap">
+						<div><i class="fa fa-calendar fa-4x"></i></div>
+						<date><%= date.strftime('%d %b').upcase %></date>
+					</div>
+					<div class="events-wrap">
+						<ul>
+							<% events.each do |event| %>
+								<li class="event">
+									<input type="checkbox" checked>
+									<i class="arrow"></i>
+									<h2><%= event.title %></h2>
+									<p class="first"><%= event.description %></p>
+									<p class="details">
+										<span><i class="fa fa-clock-o fa-fw"></i></span>              
+										<%= event.fromTime.strftime("%I:%M%p") %> - <%= event.untilTime.strftime("%I:%M%p") %>
+									</p>
+									<p class="details">
+										<span><i class="fa fa-map-marker fa-fw"></i></span>
+										<%= event.address1 %>
+									</p>
+									<p class="details">
+										<span><i class="fa fa-phone fa-fw"></i></span>
+										<%= event.phone %>
+									</p>
+									<p class="details">
+										<span><i class="fa fa-envelope fa-fw"></i></span>
+										<%= event.email %>
+									</p>
+									<p class="details">
+										<span><i class="fa fa-globe fa-fw"></i></span>
+										<%= event.url %>
+									</p>
+								</li>
+							<% end %>
+						</ul>  
+					</div> <!-- .events-wrap -->
+				</div> <!-- .content -->
+			</div> <!-- .content-wrap -->
+		<% end %><!-- @events_at_date -->
+
 		<div class="content-wrap">
 			<div class="content">
 				<div class="date-wrap">
