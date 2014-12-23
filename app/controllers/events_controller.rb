@@ -7,6 +7,8 @@ class EventsController < ApplicationController
 	def index
 		@events = Event.order(:fromDate)
 		@events_at_date = Hash.new
+		@future_events_at_date = Hash.new
+		@past_events_at_date = Hash.new
 
 		for i in 0..(@events.count - 1) do
 			if @events_at_date[@events[i].fromDate] == nil
@@ -21,6 +23,17 @@ class EventsController < ApplicationController
 		@events_at_date.each do |date, events|
 			logger.info "date: #{date} # of events: #{events.count} "
 		end
+
+		today = Date.today
+		@events_at_date.each do |date, events|
+			if date >= today
+				@future_events_at_date[date] = events
+				logger.info "Future date: #{date} # of events: #{events.count} "
+			else
+				@past_events_at_date[date] = events
+				logger.info "Past date: #{date} # of events: #{events.count} "
+			end
+		end		
 
 		# @events.each_with_index { |e, i|
 		# 	@events_at_date[e.fromDate] = Array.new
