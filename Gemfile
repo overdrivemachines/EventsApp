@@ -42,7 +42,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'devise'
 
 # Did’t install Node.js
-gem 'therubyracer'
+gem 'therubyracer', :platform => :ruby
 
 # Add a comment summarizing the current schema to the top
 # https://github.com/ctran/annotate_models
