@@ -22,7 +22,11 @@
 									<input type="checkbox" checked>
 									<i class="arrow"></i>
 									<h2><%= event.title %></h2>
-									<p class="first"><%= event.description %></p>
+									<p class="actions first">
+										<%= link_to 'Edit', edit_event_path(event) %>
+										<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+									</p>
+									<p><%= event.description %></p>
 									<p class="details">
 										<span><i class="fa fa-clock-o fa-fw"></i></span>              
 										<%= event.fromTime.strftime("%I:%M%p") %> - <%= event.untilTime.strftime("%I:%M%p") %>
