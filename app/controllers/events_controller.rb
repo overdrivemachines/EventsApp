@@ -16,12 +16,7 @@ class EventsController < ApplicationController
 				j = 0
 			end
 			@events_at_date[@events[i].fromDate][j] = @events[i]
-			j = j + 1 
-			logger.info "This is date: #{@events[i].fromDate}"
-		end
-
-		@events_at_date.each do |date, events|
-			logger.info "date: #{date} # of events: #{events.count} "
+			j = j + 1
 		end
 
 		today = Date.today
