@@ -50,4 +50,7 @@ gem 'annotate'
 
 group :development do
 	gem 'rails-erd'
+
+	# Hide assets in log
+	gem 'quiet_assets'
 end
