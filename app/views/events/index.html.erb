@@ -8,7 +8,7 @@
 
 <article id="main">
 	<section class="animated fadeInLeft active">
-		<% @events_at_date.each do |date, events| %>
+		<% @future_events_at_date.each do |date, events| %>
 			<div class="content-wrap">
 				<div class="content">
 					<div class="date-wrap">
@@ -53,51 +53,60 @@
 					</div> <!-- .events-wrap -->
 				</div> <!-- .content -->
 			</div> <!-- .content-wrap -->
-		<% end %><!-- @events_at_date -->
-
-		<div class="content-wrap">
-			<div class="content">
-				<div class="date-wrap">
-					<div><i class="fa fa-calendar fa-4x"></i></div>
-					<date>NOV 18</date>
-				</div>
-				<div class="events-wrap">
-					<ul>
-						<li>California Guitar Trio & Montreal Guitar Trio are coming to CSU, Chico!</li>
-						<li>International Forum: "A Day in the Life of a Peace Corps Volunteer"</li>
-						<li>Former art faculty exhibit</li>
-						<li>Upcoming Conversations on Diversity and Inclusion</li>
-						<li>AS Dining Services Wants Your Feedback</li>
-						<li>Late Night Lounge: Unplugged. Coffee. Spoken Word. Inspiration.</li>
-						<li>The Cross-Cultural Leadership Center presents: Diversity 411</li>          
-					</ul>  
-				</div>
-			</div>
-		</div>
+		<% end %><!-- @future_events_at_date -->
 	</section>
 	
 	<!-- PAST EVENTS -->
 	<section class="animated fadeInRight">
-		<div class="content-wrap">
-			<div class="content">
-				<div class="date-wrap">
-					<div><i class="fa fa-calendar fa-4x"></i></div>
-					<date>NOV 16</date>
-				</div>
-				<div class="events-wrap">
-					<ul>
-						<li>California Guitar Trio & Montreal Guitar Trio are coming to CSU, Chico!</li>
-						<li>International Forum: "A Day in the Life of a Peace Corps Volunteer"</li>
-						<li>Former art faculty exhibit</li>
-						<li>Upcoming Conversations on Diversity and Inclusion</li>
-						<li>AS Dining Services Wants Your Feedback</li>
-						<li>Late Night Lounge: Unplugged. Coffee. Spoken Word. Inspiration.</li>
-						<li>The Cross-Cultural Leadership Center presents: Diversity 411</li>          
-					</ul>  
-				</div> <!-- .events-wrap -->      
-			</div> <!-- .content -->
-		</div> <!-- .content-wrap -->
+		<% @past_events_at_date.each do |date, events| %>
+			<div class="content-wrap">
+				<div class="content">
+					<div class="date-wrap">
+						<div><i class="fa fa-calendar fa-4x"></i></div>
+						<date><%= date.strftime('%d %b').upcase %></date>
+					</div>
+					<div class="events-wrap">
+						<ul>
+							<% events.each do |event| %>
+								<li class="event">
+									<input type="checkbox" checked>
+									<i class="arrow"></i>
+									<h2><%= event.title %></h2>
+									<p class="actions first">
+										<%= link_to 'Edit', edit_event_path(event) %>
+										<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+									</p>
+									<p><%= event.description %></p>
+									<p class="details">
+										<span><i class="fa fa-clock-o fa-fw"></i></span>              
+										<%= event.fromTime.strftime("%I:%M%p") %> - <%= event.untilTime.strftime("%I:%M%p") %>
+									</p>
+									<p class="details">
+										<span><i class="fa fa-map-marker fa-fw"></i></span>
+										<%= event.address1 %>
+									</p>
+									<p class="details">
+										<span><i class="fa fa-phone fa-fw"></i></span>
+										<%= event.phone %>
+									</p>
+									<p class="details">
+										<span><i class="fa fa-envelope fa-fw"></i></span>
+										<%= event.email %>
+									</p>
+									<p class="details">
+										<span><i class="fa fa-globe fa-fw"></i></span>
+										<%= event.url %>
+									</p>
+								</li>
+							<% end %>
+						</ul>  
+					</div> <!-- .events-wrap -->
+				</div> <!-- .content -->
+			</div> <!-- .content-wrap -->
+		<% end %><!-- @past_events_at_date -->
 	</section>
+
+
 </article> <!-- #main -->
 
 <h1>Listing events</h1>
